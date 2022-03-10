@@ -1,0 +1,53 @@
+{% extends 'food/base.html' %}
+
+{% block title %}{{ food_items }}{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="container-fluid">
+     <div class="row text-center">
+          <div class="col-md-8">
+               <h2 class="title">Nos {{ category_name }}</h2>
+               <div class="row">
+                    {% for item in items %}
+                    <div class="col-md-4 p-4">
+                         <img class="picture" src="{% get_static_prefix %}food/images/{{ item.image }}">
+                         <h4 class="pt-3" id="item{{ item.id }}">{{ item.name }}</h4>
+                         <div class="form-check-inline">
+                              <label class="form-check-label">
+                                  <input class="form-check-input" name="item{{ item.id }}" value="{{ item.priceM }}" type="radio" checked>
+                                  M :  {{ item.priceM }} €
+                              </label>
+                         </div>
+                         <div class="form-check-inline">
+                              <label class="form-check-label">
+                                 <input class="form-check-input"  name="item{{ item.id }}" value="{{ item.priceL }}" type="radio">
+                                  L : {{ item.priceL }} €
+                              </label>
+                           </div> 
+                           <div>
+                              <button class="btn-dark mt-3" onclick="addItem( '{{item.id}}' )">Ajoutez au panier</button>
+                           </div>
+                       </div>
+                       {% endfor %}
+                   </div>
+               </div>
+               <div class="col-md-4 orders">
+               <div class="bg-dark p-4 rounded text-light">
+               <h2 class="text-center">Votre commande</h2>
+               <ul id="bcart"></ul>
+               <h4 class="text-right" id="btotal">Total: 0€</h4>
+               </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'food/js/order.js' %}"></script>
+
+{% endblock %}
+
+
+
+

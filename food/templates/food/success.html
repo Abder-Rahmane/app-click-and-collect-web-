@@ -1,0 +1,21 @@
+{% extends 'food/base.html' %}
+
+{% load static %}
+
+{% block title %}Success{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <h2>Ta commande a été valider</h2>
+    <h4>Numero de commande : {{ orderNum }}</h4>
+    <h4>Ton panier est :</h4>
+     {% for item in items %}
+    <h4>{{ item.name }} {{ item.size }} {{ item.price }}</h4>
+    {% endfor %}
+    <h4>Total: {{ bill }} €</h4>
+    <h4>Si vous voulez modifier le panier, appeler le restaurant</h4>
+    <h4>Numero de télephone : 06 45 34 23 65</h4>
+</div>
+
+{% endblock %}
