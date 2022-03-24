@@ -1,1 +1,1 @@
-web: gunicorn clickeat.wsgi --log-file - 
+web: gunicorn clickeat.wsgi:application --log-file - 
