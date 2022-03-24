@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-5w0)9mc2^+#ihqmqee7d+$2dr83lzqnwe7%#kf8h_=b11mf1gy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['clickeatfirst.herokuapp.com', 'http://127.0.0.1:8000/']
+ALLOWED_HOSTS = ['https://clickeatfirst.herokuapp.com/', 'http://127.0.0.1:8000/']
 
 
 # Application definition
