@@ -13,10 +13,10 @@ function shoppingCart(){
     var total = localStorage.getItem('total');
     var cartSize = orders.length;
 
-    nam.innerHTML = '<h3>Name</h3>';
-    size.innerHTML = '<h3>Size</h3>';
-    price.innerHTML = '<h3>Price</h3>';
-    rm.innerHTML = '<h3>Remove</h3>';
+    nam.innerHTML = '<h3>Nom</h3>';
+    size.innerHTML = '<h3>Taille</h3>';
+    price.innerHTML = '<h3>Prix</h3>';
+    rm.innerHTML = '<h3>Supprimer</h3>';
     
 
     for (let i = 0; i < cartSize; i++) {

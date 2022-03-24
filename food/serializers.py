@@ -2,6 +2,17 @@ from rest_framework import serializers
 
 from .models import FoodItem, OrderItem, Order
 from .forms import NewUserForm
+from django.contrib.auth.models import User
+
+
+
+
+ 
+class UserSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ('username','email')
 
 
 
@@ -27,11 +38,12 @@ class OrderItemSerializer(serializers.ModelSerializer):
 class OrderSerializer(serializers.ModelSerializer):
     
     order_items = OrderItemSerializer(source="orderitem_set", many=True, read_only=True)
-
+    user = UserSerializer(source="customer", many=False, read_only=True)
+    
 
     class Meta:
         model = Order
-        fields = ('number', 'bill', 'date','note','order_items')
+        fields = ('user', 'number', 'bill', 'date', 'note', 'order_items')
 
 
 

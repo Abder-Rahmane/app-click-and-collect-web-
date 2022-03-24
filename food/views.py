@@ -7,7 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
-from .serializers import FoodItemSerializer, OrderSerializer, OrderItemSerializer
+from .serializers import FoodItemSerializer, OrderSerializer, OrderItemSerializer, UserSerializer
 import random
 import json
 import os
@@ -123,19 +123,22 @@ class FoodItemViewSet(viewsets.ModelViewSet):
 
     queryset = FoodItem.objects.all()
     serializer_class = FoodItemSerializer
-    permission_classes = (IsAuthenticated, )
 
 class OrderViewSet(viewsets.ModelViewSet):
 
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
-    permission_classes = (IsAuthenticated, )
 
 class OrderItemViewSet(viewsets.ModelViewSet):
 
     queryset = OrderItem.objects.all()
     serializer_class = OrderItemSerializer
-    permission_classes = (IsAuthenticated, )
+
+
+class UserViewSet(viewsets.ModelViewSet):
+
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 
 

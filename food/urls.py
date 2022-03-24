@@ -4,7 +4,7 @@ from django.urls import path
 from rest_framework import routers
 
 from . import views
-from .views import FoodItemViewSet, OrderViewSet, OrderItemViewSet
+from .views import FoodItemViewSet, OrderViewSet, OrderItemViewSet, UserViewSet
 app_name = 'food'
 
 urlpatterns = [
@@ -21,3 +21,4 @@ router = routers.DefaultRouter()
 router.register('FoodItem', FoodItemViewSet)
 router.register('Order', OrderViewSet)
 router.register('OrderItem', OrderItemViewSet)
+router.register('User', UserViewSet)

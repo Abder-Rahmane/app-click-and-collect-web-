@@ -9,6 +9,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
+   /* background-image: url("../img/home.jpeg");*/
     background-size: cover;
     position: center center;
     background-repeat: no-repeat;
@@ -39,12 +40,6 @@
 
 }
 
-.btn{
-
-    margin-bottom: 10px;
-}
-
-
 @media  (max-width:768px) {
     
      body{
@@ -52,6 +47,7 @@
    }
 
 }
+
 
 body{
     padding-top: 100px;
@@ -83,4 +79,19 @@ body{
 
 li{
     display: flex;
+}
+
+@media  (min-width:768px) {
+    
+    .btn{
+         display: none!important;
+  }
+
+}
+
+.btn{
+
+    position: absolute!important;
+    right: 32px!important;
+    top: 25px!important;
 }
