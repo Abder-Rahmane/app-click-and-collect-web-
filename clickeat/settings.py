@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-5w0)9mc2^+#ihqmqee7d+$2dr83lzqnwe7%#kf8h_=b11mf1gy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['clickeatfirst.herokuapp.com']
+ALLOWED_HOSTS = ['clickeatfirst.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -52,9 +52,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'clickeat.urls'
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 TEMPLATES = [
