@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 import django_heroku
 import dj_database_url
 
@@ -27,7 +28,7 @@ SECRET_KEY = 'django-insecure-5w0)9mc2^+#ihqmqee7d+$2dr83lzqnwe7%#kf8h_=b11mf1gy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://clickeatfirst.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['https://clickeatfirst.herokuapp.com', 'http://127.0.0.1:8000/']
 
 
 # Application definition
@@ -55,7 +56,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'clickeat.urls'
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 TEMPLATES = [
     {
@@ -87,7 +88,7 @@ WSGI_APPLICATION = 'clickeat.wsgi.application'
 #}
 
 DATABASES = {
-    'default' : dj_database_url.config()
+    'default': dj_database_url.config()
 }
 
 
@@ -128,6 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
