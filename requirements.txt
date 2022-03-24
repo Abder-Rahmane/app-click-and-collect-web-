@@ -1,4 +1,5 @@
 django
+Pillow==9.0.1
 psycopg2
 djangorestframework
 dj-database-url
