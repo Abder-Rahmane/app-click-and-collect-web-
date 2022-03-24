@@ -30,3 +30,4 @@ class OrderItem(models.Model):
     food_item = models.ForeignKey(FoodItem, on_delete=models.CASCADE)
     size_large = models.BooleanField()
 
+

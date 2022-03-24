@@ -1,9 +1,10 @@
 # Liens des pages
 
 from django.urls import path
+from rest_framework import routers
 
 from . import views
-
+from .views import FoodItemViewSet, OrderViewSet, OrderItemViewSet
 app_name = 'food'
 
 urlpatterns = [
@@ -14,3 +15,9 @@ urlpatterns = [
      path('login', views.logIn, name='login'),
      path('logout', views.logOut, name='logout'),
 ]
+
+
+router = routers.DefaultRouter()
+router.register('FoodItem', FoodItemViewSet)
+router.register('Order', OrderViewSet)
+router.register('OrderItem', OrderItemViewSet)

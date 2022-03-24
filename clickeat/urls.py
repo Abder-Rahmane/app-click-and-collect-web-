@@ -16,10 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from food import views
+from rest_framework import routers
+from food.urls import router as food_router
+
+router = routers.DefaultRouter()
+router.registry.extend(food_router.registry)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path ('', views.index, name="index"),
     path('food/', include('food.urls', namespace='food')),
+    path('api/', include(router.urls))
 
 ]

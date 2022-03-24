@@ -1,0 +1,1 @@
+web: gunicorn clickeat.wsgi --log-file - 
