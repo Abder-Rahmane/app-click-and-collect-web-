@@ -84,3 +84,11 @@ body{
 li{
     display: flex;
 }
+
+@media  (min-width:768px) {
+    
+    .btn{
+         display: none!important;
+  }
+
+}
