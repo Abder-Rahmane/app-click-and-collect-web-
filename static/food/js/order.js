@@ -2,9 +2,15 @@ var bcart = document.querySelector('#bcart');
 var ptotal = document.querySelector('#total');
 
 //ajouter pizza
+//
+//
+//
 
 function addItem(id){
     //nom burger
+    //
+    //
+    //
 
     ItemId = 'item' + id;
     var name = document.getElementById(ItemId).innerHTML;
