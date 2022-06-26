@@ -21,6 +21,10 @@ function addItem(id){
         price = pri[1].value;
         size = 'L';
     }
+    
+   //
+   //
+   //
 
     var orders = JSON.parse(localStorage.getItem('orders'));
     var total = localStorage.getItem('total');
@@ -44,6 +48,9 @@ function addItem(id){
     bcart.innerHTML += '<li>' + name + ' ' + size + ': ' + price +' €' + butt + ' </li>';
 
 }
+//
+//
+//
 
 function shoppingCart(){
     var orders = JSON.parse(localStorage.getItem('orders'));
@@ -57,6 +64,10 @@ function shoppingCart(){
     btotal.innerHTML =  'Total : ' + Number(total) + '€';
 
 }
+//
+//
+//
+//
 
 shoppingCart();
 
@@ -76,3 +87,8 @@ function removeItem(n){
     shoppingCart();
 
 }
+//
+//
+//
+
+
